@@ -1,0 +1,14 @@
+body{
+    color: #212121;
+    margin: 0;
+}
+
+a {
+    color: #212121;
+}
+
+h1 {
+    font-size: 60px;
+    margin-top: 64px;
+    margin-bottom: 16px;
+}
