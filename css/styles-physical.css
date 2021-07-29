@@ -95,9 +95,12 @@ pre{
     line-height: 24px;
 }
 blockquote{
+    border-left: 4px solid var(--gray30);
     font-size: 24px;
+    line-height: 24px;
     margin: 32px 0;
     padding-left: 16px;
+    /* border: 1px solid red; */
 }
 
 blockquote span {
