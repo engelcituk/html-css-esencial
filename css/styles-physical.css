@@ -33,6 +33,9 @@
     --gray10: #616161;
 }
 
+html{
+    scroll-behavior: smooth;
+}
 body{
     color: var(--gray30);
     font-family: 'Roboto', sans-serif;
@@ -46,25 +49,34 @@ a {
 header{
     font-size: 14px;
     color: var(--gray10);
+    position: absolute;
+    left: -232px;
+    top: 64px;
+    width: 188px;
 }
 
 header a {
     color: var(--gray10);
     text-decoration: none;
 }
-
+header li {
+    margin-bottom: 16px;
+}
 header a:hover {
     color: var(--gray30);
 }
 
 nav details summary {
     font-weight: bold;
+    line-height: 24px;
 }
 h1 {
     font-size: 60px;
     /* font-size: 3.75em; */
     margin-top: 64px;
     margin-bottom: 16px;
+    font-weight: normal;
+    /* border: 10px solid red; */
 }
 /* h1 + p {
     background: red;
@@ -110,12 +122,41 @@ blockquote span {
 blockquote span::before {
     content: '- ';
 }
+
+.header {
+    position: sticky;
+    top: 0;
+}
+.header-content{
+    position: relative;
+}
+.main{
+}
+.wrapper{
+    width: 902px;
+    margin: auto;
+}
+
+.main-content {
+    background: white; 
+}
+
+.title{
+    background: red;
+}
+.services{
+    background: gray;
+}
+.pricing{
+    background: moccasin;
+}
 .hero {
     background: linear-gradient(to top, rgba(255, 255, 255, .3), transparent), url('../img/patron.png');
     height: 350px;
 }
 .section-content {
-    margin-top: 60px;
+    margin-top: 164px;
+   position: relative;
 }
 .section-content:first-of-type {
     margin: 0;
@@ -140,17 +181,29 @@ blockquote span::before {
 .section-content h3{
     /*  background: red;*/
     counter-increment:titleList; 
-    padding-bottom: 4px;
+    padding-bottom: 8px;
 }
 
 .section-content h3::before{
     content: counter(titleList)'. ';
 }
 
-h3::after{
+.section-content h3::after {
     content: '';
+    width: 80px;
     height: 4px;
-    width:32px;
     background: var(--gray30);
     display: inline-block;
-}
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+/* el box sizing
+box-sizing: border-box;
+si se define un elemento con un ancho de 100 pixeles. Esos 100 pixeles incluíran cualquier borde o relleno que se añadan, y la caja de contenido se encogerá para absorber ese ancho extra. 
+*/
+
+/* Posicion relative mueve,Las propiedades top y bottom especifican el desplazamiento vertical desde su posición original; las propiedades left y right especifican su desplazamiento horizontal.
+si pones un elememnto en absoluto y quieres quer sea relativa a un contenedor, el contenedor deser ser relativo, sino el elemento absoluto funciona tomando los valores del viewport
+*/
