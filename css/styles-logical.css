@@ -37,19 +37,45 @@ body{
     color: var(--white);
     font-family: 'Nunito', sans-serif;
     background: #251F24;
+    margin: 0;
     /* font-family:charter;*/
 }
 
 a {
     color: var(--white);
 }
+.header{
+    position: sticky;
+    inset-block-start:-45px; /*margin top 65px*/
+
+}
+
+.header-content {
+    position: relative;
+    inset-block-start:65px; /*margin top 65px*/
+}
 header{
     font-size: 14px;
     color: var(--white);
+    position: absolute;
+    /*
+    top, bottom, left, right,
+        sus equivalentes al posucionar
+    inset-block-start
+    inset-block-end
+    inset-inline-start
+    inset-inline-end 
+    se puede resumir con inset sino se quiere especificar
+    */
+    inset-inline-start: -208px;
+    /* Ancho */
+    inline-size: 188px; /*equivale al width*/
+
 }
 
 header li {
     color: var(--white20);
+    margin-block-end: 16px; /*equivale a margin-bottom*/
 }
 
 header a {
@@ -66,24 +92,44 @@ nav details summary {
 }
 
 h1, h2 , h3 {
-    font-weight: normal;
+    /* font-weight: normal; */
 }
 h1 {
     font-size: 60px;
+    margin-block-start: 64px;
+    margin-block-end: 16px;
     /* font-size: 3.75em; */
+    /*para alinear textos con valores logicos, a la derecha sería con end, a la izquierda con start*/
 }
 
 h2{
     font-size: 2em;
+    margin-block: 40px; /* equivale a margin-block-start: 64px; margin-block-end: 16px; */
 }
 
 h3{
     font-size: 1.5em;
+    font-weight: 600;
+    margin-block: 16px; 
 }
 
+hr{
+    margin-block: 40px; /* equivale a margin-block-start: 64px; margin-block-end: 16px; */
+    border: 1px solid rgba(97, 97, 97, 0.2);
+}
 pre{
     background: var(--white10);
     color: white;
+    padding: 40px;
+    overflow: auto;
+    border-radius: 8px;
+    /* border-inline-start: 5px solid orange; 
+    border-inline-end: 5px solid orange; 
+    border-block-start: 5px solid orange; 
+    border-block-end: 5px solid orange;  */
+    border: 10px solid #5551FF;
+    box-shadow: -10px 10px 0 0 #ABAAF6;
+    margin-block-end: 30px;
 }
 
 p{
@@ -96,32 +142,24 @@ p{
     height: 350px;
 }
 
-.section-content img{
-    margin-block-start: 40px;
-    max-width: 100%;
-}
 .section-content{
     counter-reset: titleList;
+}
+
+.section-content img{
+    display: block;
+    margin-block-start: 40px;
+    max-width: 100%;
 }
 .section-content h3{
     counter-increment:titleList; 
 }
 
 .section-content h3::before{
-    content: counter(titleList);
+    content: counter(titleList, decimal) '. ';
 }
 
-h3::after{
-    content: '';
-    height: 4px;
-    width:32px;
-    background: var(--white);
-    display: inline-block;
-}
 
-.main hr {
-    display: none;
-}
 
 .main{
     /* border: 1px solid red; */
@@ -134,5 +172,26 @@ h3::after{
 }
 
 .main-content {
+    padding-inline: 16px;
     /* border: 1px solid blue; */
+}
+
+blockquote{
+    margin-block-start: 80px;
+    margin-block-end: 63px;
+    background: var(--white10);
+    border-radius: 8px;
+    padding-inline-start: 24px;
+    padding-inline-end: 24px;
+    padding-block-start: 24px;
+    padding-block-end: 24px;
+    line-height: 32px;
+    font-size: 24px;
+}
+blockquote p {
+    color: var(--white)
+
+}
+.main hr {
+    display: none;
 }

@@ -181,11 +181,11 @@ blockquote span::before {
 .section-content h3{
     /*  background: red;*/
     counter-increment:titleList; 
-    padding-bottom: 8px;
+    /* padding-bottom: 8px;*/
 }
 
 .section-content h3::before{
-    content: counter(titleList)'. ';
+    content: counter(titleList, decimal) '. ';
 }
 
 .section-content h3::after {
