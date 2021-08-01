@@ -45,19 +45,16 @@ a {
     color: var(--white);
 }
 .header{
-    position: sticky;
-    inset-block-start:-45px; /*margin top 65px*/
-
+    
 }
 
 .header-content {
-    position: relative;
-    inset-block-start:65px; /*margin top 65px*/
+    padding-inline:20px; /*paddin en ambos costados, para version mobile*/
 }
 header{
     font-size: 14px;
     color: var(--white);
-    position: absolute;
+    margin-block-start: 20px;
     /*
     top, bottom, left, right,
         sus equivalentes al posucionar
@@ -67,9 +64,8 @@ header{
     inset-inline-end 
     se puede resumir con inset sino se quiere especificar
     */
-    inset-inline-start: -208px;
-    /* Ancho */
-    inline-size: 188px; /*equivale al width*/
+  
+    /* inline-size: 188px; /*para Ancho, equivale al width*/
 
 }
 
@@ -95,9 +91,9 @@ h1, h2 , h3 {
     /* font-weight: normal; */
 }
 h1 {
-    font-size: 60px;
-    margin-block-start: 64px;
-    margin-block-end: 16px;
+    font-size: 40px;
+    margin-block-start: 20px; /*margen en la parte superior*/
+    margin-block-end: 16px; /*margen en la parte inferior*/
     /* font-size: 3.75em; */
     /*para alinear textos con valores logicos, a la derecha sería con end, a la izquierda con start*/
 }
@@ -139,7 +135,8 @@ p{
 .hero {
     background-image: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
     /*  background-image: linear-gradient(to top, rgba(255, 255, 255, .3), transparent), url('./../img/patron.png');*/
-    height: 350px;
+    block-size: 50px; /*Es para indicar height, quivale a height: 50px; */
+
 }
 
 .section-content{
@@ -243,8 +240,8 @@ blockquote p {
     inline-size: 100%; /*equivale al width*/
     border-radius: 8px;
     margin-block-end:24px; /*Margen al final del bloque(abajo en este caso), sería como el margin bottom*/
-    padding-inline: 16px;
-    padding-block: 12px;
+    padding-inline: 16px; /*padding izq, derecha*/
+    padding-block: 12px; /*padding arriba, abajo*/
 
 }
 /*Selecto de atributo*/
@@ -255,4 +252,43 @@ blockquote p {
 /* pseudo elementos para modificar el placeholder */
 .form input::-webkit-input-placeholder{
     color: var(--white20);     
+}
+
+/* Se va aplicar estilos a la medida 1366px que sea superior o igual a lo que diga min-width, tecnica mobile-first*/
+@media screen and (min-width: 1366px){
+    h1{
+        font-size: 60px;
+        margin-block-start: 64px; /*margen en la parte superior o el inicio del bloque*/
+    }
+    .header{
+        position: sticky;
+        inset-block-start:-45px; /*margin top -45px*/
+    }
+
+    .hero{
+        block-size: 350px; /*Es para indicar height, equivale a height: 350px; */
+    }
+    
+    .header-content {
+        position: relative;
+        inset-block-start:65px; /*margin top 65px*/
+        padding-inline: 0;/*reseteo el padding de ambos costados en 0 que se habia establecido en 20px en la mobile version */
+    }
+    header{
+         /*
+        top, bottom, left, right,
+            sus equivalentes al posicionar
+        inset-block-start
+        inset-block-end
+        inset-inline-start
+        inset-inline-end 
+        se puede resumir con inset sino se quiere especificar
+        */
+        position: absolute;
+        inset-block-start:0;
+        inset-inline-start: -208px;
+        inline-size: 188px; /*Ancho, *equivale al width*/
+    
+    }
+    
 }
