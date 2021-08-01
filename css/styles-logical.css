@@ -195,3 +195,40 @@ blockquote p {
 .main hr {
     display: none;
 }
+
+.slider {
+    /* border: 1px solid red; */
+}
+
+.slider-container{
+    /* border: 1px solid purple; */
+    /* block-size:100px; */
+    display: block;
+    /* overflow: auto; */
+    overflow: hidden ;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    font-size: 0;
+}
+
+.video{
+    margin: 0;
+    /* border: 1px solid blue; */
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    aspect-ratio:16/9;
+}
+
+.slider-bullet-list{
+    text-align: center; /*para centrar los bullets*/
+    margin-block-start: 10px;
+}
+
+.slider-bullet{
+    display: inline-block; /*Para poder darles ancho y alto*/
+    inline-size: 15px;
+    block-size: 15px;
+    background: white;
+    border-radius: 50%;
+}
