@@ -232,3 +232,27 @@ blockquote p {
     background: white;
     border-radius: 50%;
 }
+
+.form input{
+    background: #251F24;
+    box-sizing: border-box; /* Para mantener el modelo de caja aun contemplando que se le agrega borde, padding, margin*/
+    border: 1px solid var(--white);
+    color: var(--white);
+    display: block; /*permitirá el margin collapsing*/
+    font-size: 16px;
+    inline-size: 100%; /*equivale al width*/
+    border-radius: 8px;
+    margin-block-end:24px; /*Margen al final del bloque(abajo en este caso), sería como el margin bottom*/
+    padding-inline: 16px;
+    padding-block: 12px;
+
+}
+/*Selecto de atributo*/
+.form input[type="submit"]{
+   background: #157EFB;
+   border: none; /*resetear un borde que ya existe, con none o con cero (0)*/
+}
+/* pseudo elementos para modificar el placeholder */
+.form input::-webkit-input-placeholder{
+    color: var(--white20);     
+}
